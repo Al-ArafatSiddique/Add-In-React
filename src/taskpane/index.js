@@ -1,22 +1,21 @@
 import App from "./App";
-import { AppContainer } from "react-hot-loader";
-import { initializeIcons } from "@fluentui/font-icons-mdl2";
+// import { AppContainer } from "react-hot-loader";
+// import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { HashRouter } from "react-router-dom";
 
 /* global document, Office, module, require */
 
-initializeIcons();
+// initializeIcons();
 let isOfficeInitialized = false;
 const render = (Component) => {
   ReactDOM.render(
-    <BrowserRouter>
-      <AppContainer>
+    <HashRouter>
+      {/* <AppContainer> */}
       <Component isOfficeInitialized={isOfficeInitialized} />
-    </AppContainer>
-    </BrowserRouter>
+    {/* </AppContainer> */}
+    </HashRouter>
     ,
     document.getElementById("container")
   );
@@ -31,9 +30,9 @@ Office.onReady(() => {
 /* Initial render showing a progress bar */
 render(App);
 
-if (module.hot) {
-  module.hot.accept("./App", () => {
-    const NextApp = require("./App").default;
-    render(NextApp);
-  });
-}
+// if (module.hot) {
+//   module.hot.accept("./App", () => {
+//     const NextApp = require("./App").default;
+//     render(NextApp);
+//   });
+// }

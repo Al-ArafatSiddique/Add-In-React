@@ -12,6 +12,7 @@ const App = (props) => {
     <React.Fragment>
       <Header/>
       <Switch>
+  
         
         <Route path='/colorRed'><ColorRed/> </Route>
         <Route path='/colorYellow'><ColorYellow/></Route>
